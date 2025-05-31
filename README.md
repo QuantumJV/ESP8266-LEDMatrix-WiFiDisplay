@@ -152,9 +152,13 @@ wifiManager.resetSettings();  // 🔥 This erases saved WiFi credentials on each
 - Re-enable the reset line temporarily.
 
 - Or trigger a reset in code with:
-- 
+
+```cpp
 WiFiManager wm;
 wm.resetSettings();  // Call this once, then remove or comment it again
+```
+
+> ⚠️ **Note:** Keeping the reset line enabled will force reconfiguration every time the device restarts, which is not ideal for long-term or headless deployment.
 
 ## 🛡️ Security
 
