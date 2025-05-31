@@ -65,7 +65,7 @@ You're using a **MAX7219-based 8x32 LED Matrix Display** (i.e., 4 x 8x8 modules 
    - [`WiFiManager`](https://github.com/tzapu/WiFiManager)
 
 2. Connect your hardware:
-   - Use the wiring chart from the **🔌 Wiring** section below.
+   - Use the wiring chart from the **🔌 Wiring** section above.
 
 3. Open the `LEDMatrix_WiFi.ino` file in the Arduino IDE.
 
