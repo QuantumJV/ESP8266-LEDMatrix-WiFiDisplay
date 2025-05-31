@@ -32,7 +32,7 @@ This project displays text on a MAX7219-based LED matrix using an ESP8266 module
 After uploading the code, power the ESP8266. It will create a WiFi hotspot named `ESP8266_LED_AP`.  
 Connect to this network using your phone or laptop.
 
-![Configure WiFi Screenshot](screenshots/screenshot1.png)
+![Configure WiFi Screenshot](Screenshots/Wifi_Configure.png)
 
 ---
 
