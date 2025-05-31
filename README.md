@@ -127,6 +127,33 @@ Once connected to your WiFi:
 - 💡 **Adjust Brightness:** Use the slider to control LED brightness (range: 0–15).
 - 📟 The interface is mobile and desktop friendly.
 
+## 🔁 WiFi Reset Behavior (Optional)
+
+By default, the following line in `setup()` **clears any previously saved WiFi credentials** every time the ESP8266 boots:
+
+```cpp
+wifiManager.resetSettings();  // 🔥 This erases saved WiFi credentials on each boot
+```
+- This is useful during testing or the first-time setup, ensuring the device always launches in Access Point mode for easy configuration.
+
+✅ Keep WiFi Saved Across Reboots :-
+- If you'd like your ESP8266 to remember the connected WiFi after rebooting (recommended for regular use):
+
+1. Comment out or remove the reset line in the setup() function:
+
+// wifiManager.resetSettings();  // ❌ Now credentials will persist after reboot
+
+2. Now the device will automatically reconnect to the last known WiFi network every time it powers on — without asking the user to reconfigure.
+
+3. If you ever want to manually clear the saved credentials later, you can:
+
+- Re-enable the reset line temporarily.
+
+- Or trigger a reset in code with:
+- 
+WiFiManager wm;
+wm.resetSettings();  // Call this once, then remove or comment it again
+
 ## 🛡️ Security
 
 - This project does not expose WiFi credentials to the internet.
