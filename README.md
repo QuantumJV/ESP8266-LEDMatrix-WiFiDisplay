@@ -6,6 +6,8 @@ This project displays text on a MAX7219-based LED matrix using an ESP8266 module
 ## Sketch and Code
 💡 The main sketch is in [LEDMatrix_WiFi.ino](LEDMatrix_WiFi.ino), but you can also view the syntax-highlighted C++ version here: [LEDMatrix_WiFi_Code.cpp](ESP8266_LED_Matrix_code.cpp)
 
+---
+
 ## 🔧 Features
 
 - ESP8266 auto-connects to saved WiFi or creates an access point if none is found.
@@ -16,6 +18,8 @@ This project displays text on a MAX7219-based LED matrix using an ESP8266 module
 - IP address displayed on the LED matrix after successful WiFi connection
 - Optional WiFi reset for testing or clean startup
 
+---
+
 ## 🧰 Requirements
 
 - **Board:** ESP8266 (NodeMCU, Wemos D1 Mini, etc.)
@@ -24,6 +28,8 @@ This project displays text on a MAX7219-based LED matrix using an ESP8266 module
   - [`MD_MAX72xx`](https://github.com/MajicDesigns/MD_MAX72XX)
   - [`WiFiManager`](https://github.com/tzapu/WiFiManager)
 - **IDE:** Arduino IDE
+
+---
 
 ## 🔌 Wiring
 
@@ -49,6 +55,8 @@ You're using a **MAX7219-based 8x32 LED Matrix Display** (i.e., 4 x 8x8 modules 
 4. The user selects and connects to a WiFi network.
 5. After a successful connection, the ESP8266 reboots and displays its local IP on the LED matrix.
 6. Enter that IP in your browser to open the control interface.
+
+---
 
 ## 🚀 Getting Started
 
@@ -86,6 +94,7 @@ ESP8266_LED_AP
 
 - 💡 Adjust brightness using a slider
 
+---
 
 ## 🖼️ Setup Screenshots
 
@@ -127,6 +136,8 @@ Once connected to your WiFi:
 - 💡 **Adjust Brightness:** Use the slider to control LED brightness (range: 0–15).
 - 📟 The interface is mobile and desktop friendly.
 
+---
+
 ## 🔁 WiFi Reset Behavior (Optional)
 
 By default, the following line in `setup()` **clears any previously saved WiFi credentials** every time the ESP8266 boots:
@@ -160,6 +171,8 @@ wm.resetSettings();  // Call this once, then remove or comment it again
 
 > ⚠️ **Note:** Keeping the reset line enabled will force reconfiguration every time the device restarts, which is not ideal for long-term or headless deployment.
 
+---
+
 ## 🛡️ Security
 
 - This project does not expose WiFi credentials to the internet.
@@ -170,12 +183,11 @@ wm.resetSettings();  // Call this once, then remove or comment it again
 
 - Suitable for testing, DIY smart signage, or educational demos.
 
+---
+
 ## 📄 License
 
 [MIT License](LICENSE)
-
-
----
 
 Let me know if you'd like to:
 
