@@ -79,10 +79,21 @@ Once connected to your WiFi:
 1. Install the required libraries via Arduino Library Manager or download from the links above.
 2. Flash the `LEDMatrix_WiFi.ino` to your ESP8266 using Arduino IDE.
 3. On first boot, WiFi credentials are cleared using:
+   
      ```cpp
    wifiManager.resetSettings();  // Clears saved WiFi
-4. The ESP8266 starts ESP8266_LED_AP for configuration.
-5. Connect and configure WiFi through the captive portal.
+     
+5. The ESP8266 starts ESP8266_LED_AP for configuration.
+6. Connect and configure WiFi through the captive portal.
 '''Tip: To preserve WiFi credentials across reboots, simply comment out the reset line in setup():'''
+// wifiManager.resetSettings();
 
+## 🛡️ Security
 
+- This project does not expose WiFi credentials to the internet.
+
+- All communications are handled locally using HTTP.
+
+- The reset mechanism ensures no previous credentials persist unintentionally.
+
+- Suitable for testing, DIY smart signage, or educational demos.
