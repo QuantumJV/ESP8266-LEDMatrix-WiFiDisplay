@@ -16,6 +16,31 @@ This project displays text on a MAX7219-based LED matrix using an ESP8266 module
 - IP address displayed on the LED matrix after successful WiFi connection
 - Optional WiFi reset for testing or clean startup
 
+## 🧰 Requirements
+
+- **Board:** ESP8266 (NodeMCU, Wemos D1 Mini, etc.)
+- **Display:** MAX7219-based 8x32 LED Matrix (FC16_HW)
+- **Libraries:**
+  - [`MD_MAX72xx`](https://github.com/MajicDesigns/MD_MAX72XX)
+  - [`WiFiManager`](https://github.com/tzapu/WiFiManager)
+- **IDE:** Arduino IDE
+
+## 🔌 Wiring
+
+You're using a **MAX7219-based 8x32 LED Matrix Display** (i.e., 4 x 8x8 modules in series). Connect it to your **ESP8266** (NodeMCU or similar) as follows:
+
+| LED Matrix Pin | ESP8266 Pin | NodeMCU Label |
+|----------------|-------------|----------------|
+| VCC            | 3.3V        | 3V3            |
+| GND            | GND         | G              |
+| DIN (Data In)  | GPIO13      | D7             |
+| CS  (Load)     | GPIO15      | D8             |
+| CLK (Clock)    | GPIO14      | D5             |
+
+> 💡 **Tip:** These modules use the **FC-16** layout, which matches well with the `MD_MAX72xx::FC16_HW` hardware setting in code.
+
+> ⚠️ **Note:** Although it may work on 3.3V, for brighter and more stable display (especially for 8x32 or larger), it's recommended to use **5V** power with a **logic level shifter** on data lines.
+
 ## 📱 How It Works
 
 1. On boot, ESP8266 tries to connect to saved WiFi credentials.
@@ -24,6 +49,43 @@ This project displays text on a MAX7219-based LED matrix using an ESP8266 module
 4. The user selects and connects to a WiFi network.
 5. After a successful connection, the ESP8266 reboots and displays its local IP on the LED matrix.
 6. Enter that IP in your browser to open the control interface.
+
+## 🚀 Getting Started
+
+1. Install the required libraries via Arduino Library Manager or download from the links above:
+   - [`MD_MAX72xx`](https://github.com/MajicDesigns/MD_MAX72XX)
+   - [`WiFiManager`](https://github.com/tzapu/WiFiManager)
+
+2. Connect your hardware:
+   - Use the wiring chart from the **🔌 Wiring** section below.
+
+3. Open the `LEDMatrix_WiFi.ino` file in the Arduino IDE.
+
+4. Select the correct **board** (`NodeMCU 1.0`, `Wemos D1 Mini`, or other ESP8266), **port**, and **upload speed** (typically 115200).
+
+5. Flash the sketch to your ESP8266.
+
+6. On first boot, WiFi credentials are cleared using:
+   ```cpp
+   wifiManager.resetSettings();  // Clears saved WiFi
+
+7.The ESP8266 creates a WiFi access point named:
+ESP8266_LED_AP
+
+8. Connect to this AP using your phone or computer.
+
+9. A captive portal will appear. If it doesn't, open your browser and visit 192.168.4.1.
+
+10. Choose your WiFi network from the list and enter the password.
+
+11. After successful connection, the ESP8266 will reboot and display the assigned IP address on the LED matrix.
+
+12. Open the shown IP address in a web browser to:
+
+- ✅ Send a scrolling text message
+
+- 💡 Adjust brightness using a slider
+
 
 ## 🖼️ Setup Screenshots
 
@@ -64,48 +126,6 @@ Once connected to your WiFi:
 - 💬 **Send Text:** Type a message and click "Send" to display it as scrolling text.
 - 💡 **Adjust Brightness:** Use the slider to control LED brightness (range: 0–15).
 - 📟 The interface is mobile and desktop friendly.
-
-## 🧰 Requirements
-
-- **Board:** ESP8266 (NodeMCU, Wemos D1 Mini, etc.)
-- **Display:** MAX7219-based 8x32 LED Matrix (FC16_HW)
-- **Libraries:**
-  - [`MD_MAX72xx`](https://github.com/MajicDesigns/MD_MAX72XX)
-  - [`WiFiManager`](https://github.com/tzapu/WiFiManager)
-- **IDE:** Arduino IDE
-
-## 🔌 Wiring
-
-You're using a **MAX7219-based 8x32 LED Matrix Display** (i.e., 4 x 8x8 modules in series). Connect it to your **ESP8266** (NodeMCU or similar) as follows:
-
-| LED Matrix Pin | ESP8266 Pin | NodeMCU Label |
-|----------------|-------------|----------------|
-| VCC            | 3.3V        | 3V3            |
-| GND            | GND         | G              |
-| DIN (Data In)  | GPIO13      | D7             |
-| CS  (Load)     | GPIO15      | D8             |
-| CLK (Clock)    | GPIO14      | D5             |
-
-> 💡 **Tip:** These modules use the **FC-16** layout, which matches well with the `MD_MAX72xx::FC16_HW` hardware setting in code.
-
-> ⚠️ **Note:** Although it may work on 3.3V, for brighter and more stable display (especially for 8x32 or larger), it's recommended to use **5V** power with a **logic level shifter** on data lines.
-
-## 🚀 Getting Started
-
-1. Install the required libraries via Arduino Library Manager or download from the links above.
-2. Flash the `LEDMatrix_WiFi.ino` to your ESP8266 using Arduino IDE.
-3. On first boot, WiFi credentials are cleared using:
-   
-     ```cpp
-   wifiManager.resetSettings();  // Clears saved WiFi
-     
-5. The ESP8266 starts ESP8266_LED_AP for configuration.
-6. Connect and configure WiFi through the captive portal.
-7. 
-> 💡 **Tip:** To preserve WiFi credentials across reboots, simply comment out the reset line in `setup()`:
-> ```cpp
-> // wifiManager.resetSettings();
-> ```
 
 ## 🛡️ Security
 
