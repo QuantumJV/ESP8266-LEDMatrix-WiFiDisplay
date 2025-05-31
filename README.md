@@ -77,8 +77,8 @@ You're using a **MAX7219-based 8x32 LED Matrix Display** (i.e., 4 x 8x8 modules 
    ```cpp
    wifiManager.resetSettings();  // Clears saved WiFi
 
-7.The ESP8266 creates a WiFi access point named:
-ESP8266_LED_AP
+7. The ESP8266 creates a WiFi access point named:
+`ESP8266_LED_AP`
 
 8. Connect to this AP using your phone or computer.
 
