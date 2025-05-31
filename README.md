@@ -68,11 +68,27 @@ Once connected to your WiFi:
 ## 🧰 Requirements
 
 - **Board:** ESP8266 (NodeMCU, Wemos D1 Mini, etc.)
-- **Display:** MAX7219-based 4-in-1 LED Matrix (FC16_HW)
+- **Display:** MAX7219-based 8x32 LED Matrix (FC16_HW)
 - **Libraries:**
   - [`MD_MAX72xx`](https://github.com/MajicDesigns/MD_MAX72XX)
   - [`WiFiManager`](https://github.com/tzapu/WiFiManager)
 - **IDE:** Arduino IDE
+
+## 🔌 Wiring
+
+You're using a **MAX7219-based 8x32 LED Matrix Display** (i.e., 4 x 8x8 modules in series). Connect it to your **ESP8266** (NodeMCU or similar) as follows:
+
+| LED Matrix Pin | ESP8266 Pin | NodeMCU Label |
+|----------------|-------------|----------------|
+| VCC            | 3.3V        | 3V3            |
+| GND            | GND         | G              |
+| DIN (Data In)  | GPIO13      | D7             |
+| CS  (Load)     | GPIO15      | D8             |
+| CLK (Clock)    | GPIO14      | D5             |
+
+> 💡 **Tip:** These modules use the **FC-16** layout, which matches well with the `MD_MAX72xx::FC16_HW` hardware setting in code.
+
+> ⚠️ **Note:** Although it may work on 3.3V, for brighter and more stable display (especially for 8x32 or larger), it's recommended to use **5V** power with a **logic level shifter** on data lines.
 
 ## 🚀 Getting Started
 
@@ -100,3 +116,16 @@ Once connected to your WiFi:
 - The reset mechanism ensures no previous credentials persist unintentionally.
 
 - Suitable for testing, DIY smart signage, or educational demos.
+
+## 📄 License
+
+[MIT License](LICENSE)
+
+
+---
+
+Let me know if you'd like to:
+
+- Add setup GIFs or extra screenshots  
+- Include platform badges (ESP8266, Arduino IDE, MIT License, etc.)  
+- Convert this for GitHub Pages or documentation site integration
