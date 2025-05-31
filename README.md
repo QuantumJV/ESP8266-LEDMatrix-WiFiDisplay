@@ -85,8 +85,11 @@ Once connected to your WiFi:
      
 5. The ESP8266 starts ESP8266_LED_AP for configuration.
 6. Connect and configure WiFi through the captive portal.
-'''Tip: To preserve WiFi credentials across reboots, simply comment out the reset line in setup():'''
-// wifiManager.resetSettings();
+7. 
+> 💡 **Tip:** To preserve WiFi credentials across reboots, simply comment out the reset line in `setup()`:
+> ```cpp
+> // wifiManager.resetSettings();
+> ```
 
 ## 🛡️ Security
 
