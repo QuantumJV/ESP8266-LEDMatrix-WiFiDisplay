@@ -25,6 +25,36 @@ This project displays text on a MAX7219-based LED matrix using an ESP8266 module
 5. After a successful connection, the ESP8266 reboots and displays its local IP on the LED matrix.
 6. Enter that IP in your browser to open the control interface.
 
+## 🖼️ Setup Screenshots
+
+### 📲 Step 1: Connect to `ESP8266_LED_AP`
+
+After uploading the code, power the ESP8266. It will create a WiFi hotspot named `ESP8266_LED_AP`.  
+Connect to this network using your phone or laptop.
+
+![Configure WiFi Screenshot](screenshots/screenshot1.png)
+
+---
+
+### 📶 Step 2: Select WiFi & Enter Password
+
+Once connected, the **WiFiManager captive portal** will appear.  
+Select your WiFi network from the list and enter its password.
+
+![WiFi List Screenshot](screenshots/screenshot2.png)
+
+---
+
+### 🌐 Step 3: Access Web Interface to Control Display
+
+After successful WiFi connection, the ESP8266 will reboot and display its IP address on the LED matrix.  
+Enter this IP address into your browser to open the control panel.
+
+Here you can:
+
+- ✍️ Enter a scrolling message
+- 💡 Adjust brightness using the slider
+
 ![Web Interface](Screenshots/Web_interface_LED.png)
 
 ## 🌐 Web Interface Details
