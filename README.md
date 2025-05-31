@@ -24,7 +24,7 @@ This project displays text on a MAX7219-based LED matrix using an ESP8266 module
 4. After connecting, the IP address is shown on the LED matrix.
 5. Enter the IP in a browser to control the display.
 
-![Web Interface](Screenshots/Web_interface.png)
+![Web Interface](Screenshots/Web_interface_LED.png)
 
 ## 🧰 Requirements
 
