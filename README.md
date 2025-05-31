@@ -67,7 +67,7 @@ You're using a **MAX7219-based 8x32 LED Matrix Display** (i.e., 4 x 8x8 modules 
 2. Connect your hardware:
    - Use the wiring chart from the **🔌 Wiring** section above.
 
-3. Open the `LEDMatrix_WiFi.ino` file in the Arduino IDE.
+3. Open the [`LEDMatrix_WiFi.ino`]() file in the Arduino IDE.
 
 4. Select the correct **board** (`NodeMCU 1.0`, `Wemos D1 Mini`, or other ESP8266), **port**, and **upload speed** (typically 115200).
 
