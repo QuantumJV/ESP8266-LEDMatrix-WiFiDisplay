@@ -118,7 +118,7 @@ Select your WiFi network from the list and enter its password.
 
 ### 🌐 Step 3: Access Web Interface to Control Display
 
-After successful WiFi connection, the ESP8266 will reboot and display its IP address on the LED matrix.  
+After successful WiFi connection, the ESP8266 will reboot and display its IP address `192.168.x.x` on the LED matrix.  
 Enter this IP address into your browser to open the control panel.
 
 Here you can:
