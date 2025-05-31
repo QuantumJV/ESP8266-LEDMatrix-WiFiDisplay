@@ -141,7 +141,9 @@ wifiManager.resetSettings();  // 🔥 This erases saved WiFi credentials on each
 
 1. Comment out or remove the reset line in the setup() function:
 
+```cpp
 // wifiManager.resetSettings();  // ❌ Now credentials will persist after reboot
+```
 
 2. Now the device will automatically reconnect to the last known WiFi network every time it powers on — without asking the user to reconfigure.
 
