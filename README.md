@@ -41,7 +41,7 @@ Connect to this network using your phone or laptop.
 Once connected, the **WiFiManager captive portal** will appear.  
 Select your WiFi network from the list and enter its password.
 
-![WiFi List Screenshot](screenshots/screenshot2.png)
+![WiFi List Screenshot](Screenshots/Select_Wifi.png)
 
 ---
 
